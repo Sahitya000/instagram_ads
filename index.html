@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download Now - SKMods</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --card: #f5f5f5;
+      --btn: #4caf50;
+      --btn-text: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #121212;
+      --text: #f5f5f5;
+      --card: #1e1e1e;
+      --btn: #00c6ff;
+      --btn-text: #000000;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: var(--card);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 20px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .navbar .right {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .navbar .links a:hover {
+      color: var(--btn);
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    .theme-icon {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #00c6ff;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 140px auto 40px;
+      text-align: center;
+      padding: 20px;
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    .btn {
+      background-color: var(--btn);
+      color: var(--btn-text);
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .countdown {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--card);
+      color: var(--text);
+      border-top: 1px solid #ccc;
+    }
+
+    #ad-box {
+      margin: 20px 0;
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .right {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .links a {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .theme-toggle {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      .container {
+        margin: 200px 10px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <div class="navbar">
+    <a href="#" class="logo">SKMods</a>
+    <div class="right">
+      <div class="theme-toggle">
+        <span class="theme-icon" id="themeIcon">☀️</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle" onchange="toggleTheme(this)">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="https://t.me/skmodsofficial" target="_blank">Join Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Get Your Download</h1>
+    <p>Please wait while we prepare your file...</p>
+    <div class="countdown" id="countdown">5</div>
+
+    <!-- ✅ Adsterra Native Ad -->
+    <div id="ad-box">
+      <script async="async" data-cfasync="false" src="//deceivedaisle.com/09601e797b7eaf8fd0e3fc4d09c8f32c/invoke.js"></script>
+      <div id="container-09601e797b7eaf8fd0e3fc4d09c8f32c"></div>
+    </div>
+
+    <button class="btn" id="downloadBtn" onclick="window.location.href='https://example.com/your-apk.apk'">Download Now</button>
+  </div>
+
+  <footer>
+    &copy; 2025 SKMods. All rights reserved.
+  </footer>
+
+  <script>
+    // Countdown
+    let seconds = 5;
+    const countdownEl = document.getElementById("countdown");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    const timer = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        countdownEl.style.display = "none";
+        downloadBtn.style.display = "inline-block";
+      }
+    }, 1000);
+
+    // Theme
+    const icon = document.getElementById("themeIcon");
+
+    (function () {
+      const saved = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const theme = saved || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+      document.getElementById("themeToggle").checked = theme === "dark";
+      icon.textContent = theme === "dark" ? "🌙" : "☀️";
+    })();
+
+    function toggleTheme(toggle) {
+      const newTheme = toggle.checked ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      icon.textContent = newTheme === "dark" ? "🌙" : "☀️";
+    }
+  </script>
+</body>
+</html>
